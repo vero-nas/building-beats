@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Microtonal Composing</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monofett&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="js/tune.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/15.1.5/Tone.js" integrity="sha512-5BxJJSpJ8dYoqi271NpnyjYVvd2Eyc7+EmpvZ2vjXK7Fv8UVvWPD4vFxQq0zwEhVfYvPVbv4DskFWBZBm6FaSQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    
+
+</head>
+
+<body>
+<div class="header">
+    <div class="title-wrapper">
+      <a class="h1-a" href="./index.html" >Microtonal Composition</a> 
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn"><i class="material-icons">menu</i></button>
+            <div class= "dropdown-content">
+                <a class="dropdown-link" href="./index.html">Home</a>
+                <a class="dropdown-link" href="./play.html">Play</a>
+                <a class="dropdown-link" href="./historytheory.html">History & Theory</a>
+                <a class="dropdown-link" href="./samplestutorials.html">Samples & Tutorial</a>
+                <a class="dropdown-link" href="./file-list.html">Scale list</a> 
+                <a class="dropdown-link" href="./faq.html">FAQ</a> 
+            </div>
+    </div>
+</div>
+        <div class="page-wrapper">
+            
+                <div class="column left">
+                    <div class="form-container" >                     
+
+                        <p> Build your keyboard: Select a scale, a root, and a synth! </p>
+                        <label class="label" for="userInputScale"> Scale name: </label>
+                        <input class="input" type="text" id="userInputScale">
+                        
+                        <label class="label" for="userInputTonic"> Root frequency: </label>
+                        <input class="input" type="number" id="userInputTonic">
+
+                        <label class="label" for="userInputSynth"> Synth: </label>
+                        <select class="input" id="userInputSynth">
+                            <option value="AMSynth"> AMSynth </option>
+                            <option value="FMSynth"> FMSynth </option>
+                            <option value="MemebraneSynth"> MembraneSynth </option>
+                            <option value="Synth"> Synth </option>
+                        </select>
+                        
+                        
+                        <button class="button" type="submit" id='generateKeyboardButton'> Save </button>
+                        
+                        <p> The complete list of scales compiled by Victor Cerullo is available here: 
+                        <a class="link" href="./file-list.html">File list</a>. If the scale name is non-existent, the keyboard will not generate.</p>
+
+                    </div>
+                </div>  
+                
+                <div class="column right">
+                    <div class="settings-div" id="setDiv">
+
+                        <input
+                        type="range"
+                        min="0.0"
+                        max="1.0"
+                        step="0.01"
+                        value="0.5"
+                        id="volume"
+                        />
+
+                        <button class="bg-btn" id ="startRecording"><i class="material-icons">circle</i></button>
+                        <button class="bg-btn" id="stopRecording"><i class="material-icons">square </i></button>    
+                                     
+                    </div>
+
+                    <div class="keyboard-div">
+                        <div class="keyboard" id="keyboard"></div>
+                    </div>
+                  
+                </div>
+            
+        </div>
+
+    <script src="js/recorder.js"></script>
+  	<script src="js/recording.js"></script>
+
+    </body>
+    </html>

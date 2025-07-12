@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="stylesheet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monofett&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script type="text/javascript" src="js/tunings.js"></script>
+<title>Microtonal Composing</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<div class="header">
+    <div class="title-wrapper">
+      <a class="h1-a" href="./index.html" >Microtonal Composition</a> 
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn"><i class="material-icons">menu</i></button>
+            <div class= "dropdown-content">
+                <a class="dropdown-link" href="./index.html">Home</a>
+                <a class="dropdown-link" href="./play.html">Play</a>
+                <a class="dropdown-link" href="./historytheory.html">History & Theory</a>
+                <a class="dropdown-link" href="./samplestutorials.html">Samples & Tutorial</a>
+                <a class="dropdown-link" href="./file-list.html">Scale list</a> 
+                <a class="dropdown-link" href="./faq.html">FAQ</a> 
+            </div>
+    </div>
+</div>
+<div class="page-wrapper">
+    <div class="row">
+        <body>
+            <div ng-app="app" ng-controller="ctrl">
+                <p align="center"> Adapted from the work of Andrew Bernstein, Ben Taylor, and Victor Cerullo for Tune.js.</p>
+                <div class="menu">
+                    <div class="menu-wrapper">
+                    <input type="text" placeholder="Search Tunings" ng-keyup="searchTunings($event)">
+    
+                    <a ng-click="searchTunings('')">All</a>
+                    <a ng-click="searchTunings('a')">A</a>
+                    <a ng-click="searchTunings('b')">B</a>
+                    <a ng-click="searchTunings('c')">C</a>
+                    <a ng-click="searchTunings('d')">D</a>
+                    <a ng-click="searchTunings('e')">E</a>
+                    <a ng-click="searchTunings('f')">F</a>
+                    <a ng-click="searchTunings('g')">G</a>
+                    <a ng-click="searchTunings('h')">H</a>
+                    <a ng-click="searchTunings('i')">I</a>
+                    <a ng-click="searchTunings('j')">J</a>
+                    <a ng-click="searchTunings('k')">K</a>
+                    <a ng-click="searchTunings('l')">L</a>
+                    <a ng-click="searchTunings('m')">M</a>
+                    <a ng-click="searchTunings('n')">N</a>
+                    <a ng-click="searchTunings('o')">O</a>
+                    <a ng-click="searchTunings('p')">P</a>
+                    <a ng-click="searchTunings('q')">Q</a>
+                    <a ng-click="searchTunings('r')">R</a>
+                    <a ng-click="searchTunings('s')">S</a>
+                    <a ng-click="searchTunings('t')">T</a>
+                    <a ng-click="searchTunings('u')">U</a>
+                    <a ng-click="searchTunings('v')">V</a>
+                    <a ng-click="searchTunings('w')">W</a>
+                    <a ng-click="searchTunings('x')">X</a>
+                    <a ng-click="searchTunings('y')">Y</a>
+                    <a ng-click="searchTunings('z')">Z</a>
+    
+                </div>
+                </div>
+                <table width="100%" class="scale-list" >
+                    <tr class="columnnames" >
+                       
+                        <td class="name">Name</td>
+                        <td class="description">Description</td>
+                        <td class="length">Length</td>
+                       
+                    </tr>
+                    <tr class="scale"  ng-repeat="(scale, description) in scales">
+                      
+                        
+                        <td class="name">{{scale}}</td>
+                        <td class="description">{{description.description}}</td>
+                        <td class="length">{{description.frequencies.length-1}}</td>
+                       
+                    
+                    </tr>
+                </table>
+            
+            </div>
+        </body>
+        <script>
+        
+        var app = angular.module('app',[]);
+       
+        app.controller('ctrl', function($scope){
+            $scope.searchFish = '';     // set the default search/filter term
+            $scope.scales = TuningList
+            console.log(TuningList)
+            $scope.searchTunings = function(arg) {
+                if (arg.target) {
+                    arg = arg.target.value
+                }
+                $scope.scales = {}
+                for (var key in TuningList) {
+                    if (key.indexOf(arg.toLowerCase())==0) {
+                        $scope.scales[key] = TuningList[key]
+                    }
+                }
+            }
+        });
+    
+    
+    
+        /*
+    
+        
+        
+        console.log(TuningList);
+    
+        var list = document.getElementById("scale-list");
+        var d = document.getElementById("description");
+    
+        for(var key in TuningList){
+            var text = document.createTextNode(key);
+            var description = document.createTextNode(TuningList[key].description);
+            var lineBreak = document.createElement("br");
+            var lineBreak1 = document.createElement("br");
+            var lineBreak2 = document.createElement("br");
+            
+            list.appendChild(text);
+            list.appendChild(lineBreak);
+            list.appendChild(description);
+            list.appendChild(lineBreak1);
+            list.appendChild(lineBreak2);
+        }
+        
+        */
+        </script>
+
+</div>
+</div>
+
+
+</body>
+</html>

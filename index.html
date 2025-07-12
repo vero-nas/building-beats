@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="stylesheet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monofett&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/15.1.5/Tone.js" integrity="sha512-5BxJJSpJ8dYoqi271NpnyjYVvd2Eyc7+EmpvZ2vjXK7Fv8UVvWPD4vFxQq0zwEhVfYvPVbv4DskFWBZBm6FaSQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="libraries/p5.min.js"></script>
+<script src="libraries/p5.sound.min.js"></script>
+<script src="js/index.js"></script>
+
+
+<title>Microtonal Composing</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<div class="header">
+    <div class="title-wrapper">
+      <a class="h1-a" href="./index.html" >Microtonal Composition</a> 
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn"><i class="material-icons">menu</i></button>
+            <div class= "dropdown-content">
+                <a class="dropdown-link" href="./index.html">Home</a>
+                <a class="dropdown-link" href="./play.html">Play</a>
+                <a class="dropdown-link" href="./historytheory.html">History & Theory</a>
+                <a class="dropdown-link" href="./samplestutorials.html">Samples & Tutorial</a>
+                <a class="dropdown-link" href="./file-list.html">Scale list</a> 
+                <a class="dropdown-link" href="./faq.html">FAQ</a> 
+            </div>
+    </div>
+</div>
+
+<div class="page-wrapper">
+    <div class="row">
+        <p> This is my Senior Project thesis! My aim was to create a platform to play and experiment with microtonal music, accessible to all people and knowledge levels. 
+            I am relying on Tune.js (web audio tuning library of microtonal and just intonation scales by Andrew Bernstein and Ben Taylor, 2015). 
+            I have adapted their work into this website, full credit goes to them: <a class="link" href="https://github.com/abbernie/tune/blob/master/README.md">Tune.js</a>. 
+        </p>
+            
+        <p>    
+            In the <a class="link" href="./play.html">Play</a> section, you can select your microtonal scale and play around with it!
+            <br>
+            In the <a class="link" href="./historytheory.html">History & Theory</a> section you can find some information about microtonal music. 
+            <br>
+            In the <a class="link" href="./samplestutorials.html">Samples & Tutorial</a> section you can find tutorials on how to start and use this website, as well as some samples I made. 
+            <br>
+            In the <a class="link" href="./file-list.html"> Scale list </a> section, you can find a complete list of the available tunings and temperaments.
+            <br>
+            In the <a class="link" href="./faq.html"> FAQ </a> section, you can find the FAQ section and how to reach me for suggestions.
+        </p>
+
+        <div class="visualization-div" id="visDiv"></div>
+  </div>
+  
+</body>
+
+</html>
