@@ -68,6 +68,10 @@ function createDownloadLink(blob) {
 	/* Get the settings div section from the HTML */
 	var div = document.getElementById('setDiv');
 
+	/* Creat caption for download */
+	var cap = document.createTextNode("Click on the link to download");
+
+	
 	
 
 	/* Add controls to the <audio> element, which creates an audio player*/
@@ -96,12 +100,15 @@ function createDownloadLink(blob) {
 	div.appendChild(au);
 	// add the link to the div
 	div.appendChild(link);
+	// add caption to explain download
+	div.appendChild(cap);
 
 	/* Once the item has been downloaded (link has been clicked), remove the audio clip and the link
 	to make space for a new one*/
 	link.addEventListener("click", function(){
 		div.removeChild(au);
 		div.removeChild(link);
+		div.removeChild(cap);
 	});
 	
 	
